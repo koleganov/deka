@@ -22,12 +22,14 @@ const decrement = () => {
 </script>
 
 <template>
-  <div class="p-6 sm:p-24 w-full min-h-[435px] mx-auto relative" style="background-image: url('../../../public/image/calculator/background.svg'); background-repeat: no-repeat; background-size: 100% 100%;">
+  <div class="p-6 sm:p-24 w-full min-h-[435px] mx-auto relative 
+  bg-[url('/image/calculator/mobile.png')] bg-no-repeat bg-cover bg-center 
+  md:bg-[url('/image/calculator/background.svg')]">
 
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
       <!-- Оборудование -->
-      <div>
-        <label class="block mb-2 text-sm max-md:text-[12px] text-gray-700">Выберите оборудование</label>
+      <div class="order-1">
+        <label class="block mb-2 text-sm max-md:text-[10px] text-gray-700 max-md:max-w-[15ch]">Выберите оборудование</label>
         <input
           v-model="equipment"
           placeholder="Название"
@@ -36,8 +38,8 @@ const decrement = () => {
       </div>
 
       <!-- Кол-во процедур -->
-      <div class="order-3">
-        <label class="block mb-2 text-sm max-md:text-[12px] text-gray-700 ">Количество процедур в день</label>
+      <div class="order-2">
+        <label class="block mb-2 text-sm max-md:text-[10px] text-gray-700 max-md:max-w-[15ch]">Количество процедур в день</label>
         <div class="flex items-center justify-between bg-[#EEF1F7] rounded-full px-4 py-4 max-md:px-2 max-md:py-2 ">
           <span class="text-sm font-medium">{{ proceduresPerDay }}</span>
           <div class="flex space-x-2">
@@ -54,8 +56,8 @@ const decrement = () => {
       </div>
 
       <!-- Аренда -->
-      <div class="order-5">
-        <label class="block mb-2 text-sm max-md:text-[12px] text-gray-700">Аренда помещения в месяц</label>
+      <div class="order-3">
+        <label class="block mb-2 text-sm max-md:text-[10px] text-gray-700 max-md:max-w-[16ch]">Аренда помещения в месяц</label>
         <div class="bg-[#EEF1F7] rounded-full px-4 py-4 max-md:px-2 max-md:py-2 text-center text-sm font-medium mb-2">
           {{ rent.toLocaleString('ru-RU') }} ₽
         </div>
@@ -63,8 +65,8 @@ const decrement = () => {
       </div>
 
       <!-- Зарплата -->
-      <div class="order-5">
-        <label class="block mb-2 text-sm max-md:text-[12px] text-gray-700">Зарплатный фонд в месяц</label>
+      <div class="order-4">
+        <label class="block mb-2 text-sm max-md:text-[10px] text-gray-700 max-md:max-w-[12ch]">Зарплатный фонд в месяц</label>
         <div class="bg-[#EEF1F7] rounded-full px-4 py-4 max-md:px-2 max-md:py-2 text-center text-sm font-medium mb-2">
           {{ salary.toLocaleString('ru-RU') }} ₽
         </div>
@@ -72,8 +74,8 @@ const decrement = () => {
       </div>
 
       <!-- Стоимость сессии -->
-      <div>
-        <label class="block mb-2 text-sm max-md:text-[12px] text-gray-700">Средняя стоимость сессии</label>
+      <div class="order-5">
+        <label class="block mb-2 text-sm max-md:text-[10px] text-gray-700 max-md:max-w-[15ch]">Средняя стоимость сессии</label>
         <div class="bg-[#EEF1F7] rounded-full px-4 py-4 max-md:px-2 max-md:py-2 text-center text-sm font-medium mb-2">
           {{ sessionCost.toLocaleString('ru-RU') }} ₽
         </div>
@@ -81,8 +83,8 @@ const decrement = () => {
       </div>
 
       <!-- Процент мастера -->
-      <div>
-        <label class="block mb-2 text-sm max-md:text-[12px] text-gray-700">Процент мастера</label>
+      <div class="order-6">
+        <label class="block mb-2 text-sm max-md:text-[10px] text-gray-700 max-md:max-w-[5ch]">Процент мастера</label>
         <div class="bg-[#EEF1F7] rounded-full px-4 py-4 max-md:px-2 max-md:py-2 text-center text-sm font-medium mb-2">
           {{ masterPercent }}%
         </div>
@@ -91,7 +93,7 @@ const decrement = () => {
     </div>
 
     <!-- Кнопка -->
-    <div class="bottom-0 text-center absolute right-[100px]">
+    <div class="absolute bottom-0 right-[100px] max-md:right-0 max-md:left-0 text-center">
       <a
         href="#"
         class="inline-block bg-[#1C1C3F] text-white rounded-full px-6 py-3 text-sm font-medium hover:opacity-90 transition max-md:py-1.5 max-md:text-xs"

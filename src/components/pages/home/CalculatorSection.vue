@@ -5,7 +5,7 @@ import CalculatorBlock from "../../shared/CalculatorBlock.vue";
 
 <template>
   <div class="container">
-    <div class="flex justify-center items-center gap-[100px] mb-6">
+    <div class="md:flex md:justify-center md:items-center gap-[100px] mb-6">
       <p class="title inline-block w-1/2">ОКУПАЕМОСТЬ</p>
       <span class="w-1/2 text-indigo max-md:hidden max-w-[381px]">
         Узнайте, когда бизнес начнет приносить прибыль
